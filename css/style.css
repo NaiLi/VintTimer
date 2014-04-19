@@ -1,9 +1,86 @@
 
-#fullTimer {
-	width: 600px;
+#timer {
+	/*width: 600px;
 	height: 300px;
 	margin-right: auto;
 	margin-left: auto;
 	background-color: yellow;
+	font-size: 4em;*/
+}
+/*
+#padd {
+	background-color: black;
+	height: 20%;
+	margin-bottom: 150px;	
+	float: left;
+}*/
 
+/*#7abb33;*/
+
+body {
+	font-family: 'Courier New'; 
+	font-style: white;
+	/*background-color: black;*/
+}
+
+button {
+	background-color: white; 
+	color: #ff5533;
+	height: 50px;
+	width: 150px;
+	font-weight: bold;
+	font-size: 15px;
+	margin: 5px 0px 5px 0px;
+	text-align: middle;
+}
+
+button:disabled {
+	color: #a9a2a2;
+}
+
+#lap-times {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 1.4;
+	color: #303030;
+}
+
+/* 	Bootstrap 	*/
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #ff5533;
+	text-align: center;  /*added*/
+}
+
+.jumbotron h1 {
+  line-height: 1;
+  color: white;
+}
+
+.jumbotron p {
+  line-height: 1.4;
+}
+
+.container .jumbotron {
+  border-radius: 6px;
+}
+
+@media screen and (min-width: 768px) {
+  .jumbotron {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .container .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .jumbotron h1 {
+    font-size: 63px;
+  }
 }
