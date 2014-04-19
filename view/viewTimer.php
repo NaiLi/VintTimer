@@ -21,6 +21,8 @@
 		</div>
 		<div>
 			<button id="laptime" disabled="true" onclick="timer.lapTime()">Lap time</button>
+		</div>
+		<div>
 			<button  id="reset" disabled="true" onclick="timer.reset()">Reset</button>
 		</div>
 	</div>
