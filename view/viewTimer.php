@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
 <head>
-	<script type="text/javascript" src="js/timer.js"></script>
+	<script src="js/Timer.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
-	<script type="text/javascript">
+	<script>
 		function start() {
 			timer = new Timer();
 		}

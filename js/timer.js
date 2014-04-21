@@ -6,6 +6,11 @@ function Timer() {
 	this.lap = 0;								//counter for no of laps
 	this.timer; 
 
+	this.t = 0;
+	this.m = 0;
+	this.s = 0;
+	this.n = 0;
+
 }
 
 Timer.prototype = {
@@ -19,27 +24,65 @@ Timer.prototype = {
 		document.getElementById('reset').disabled = true;
 
 		
-		var startTime = new Date();	//Starting time of run
+		var startTime = new Date();			//Starting time of run
 		this.midTime = startTime;				//First lap starts from start of run
 
-		this.timer = setInterval(function() {
 
-		var t = new Date();
+		var h = 0; 
+		var m = 0;
+		var s = 0;
+		var n = 0;
+		console.log(this.n);
+		this.timer = setInterval(function() {//(tick, 10);//function() {
+
+/*
+		//Calculate time by subtracting startTime from current time every 10 milliseconds
+		var t = new Date();//Du e la go...!!
 		var h = t.getHours() - startTime.getHours();
 		var m = t.getMinutes() - startTime.getMinutes();
 		var s = t.getSeconds() - startTime.getSeconds();
-		var n  = Math.floor(t.getMilliseconds()/10); //Kan nu bli 100...
+		var n  = Math.floor(t.getMilliseconds()/10); //Kan nu bli 100...*/
+		var diff = new Date(new Date - startTime);
+		console.log("start: " + startTime.getHours() + "  nu: " + new Date().getHours());
 
+		h = diff.getHours();
+		m = diff.getMinutes();
+		s = diff.getSeconds();
+		n = Math.floor(diff.getMilliseconds()/10);
+		console.log(diff);
+		var str = 
+			Timer.prototype.timeToString(h - 1) + ":" +
+			Timer.prototype.timeToString(m) + ":" +
+			Timer.prototype.timeToString(s) + ":" + 
+			Timer.prototype.timeToString(n);
+
+		document.getElementById('timer').innerHTML= "<h1>" + str + "<h1>"; 
+
+		}
+		, 10);
+/*
+	function tick() {
+			//Tickvariant
+
+		console.log(diff.getSeconds());
+			n++; 
+			if (n == 100) {s++; n = 0};
+			if (s == 60) {m++; s = 0};
+		  if (m == 60) {h++, m = 0};
+			
+			//console.log(n);
+			
 		var str = 
 			Timer.prototype.timeToString(h) + ":" +
 			Timer.prototype.timeToString(m) + ":" +
 			Timer.prototype.timeToString(s) + ":" + 
 			Timer.prototype.timeToString(n);
 
-		document.getElementById('timer').innerHTML= "<h1>" + str + "<h1>"; 
-		}, 10);
+		document.getElementById('timer').innerHTML= "<h1>" + str + "<h1>";
 
+	};*/
 	},
+
 
 	stopTimer: function() {
 		clearInterval(this.timer);
