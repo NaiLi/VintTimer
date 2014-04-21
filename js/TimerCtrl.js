@@ -1,12 +1,12 @@
 angular.module('Timer', [])
   .controller('timerController', function($scope) {
-    this.h = '00';
-    this.m = '00';
-    this.s = '00';
-    this.n = '00';
-    this.btn = "Start";
+    $scope.h = '00';
+    $scope.m = '00';
+    $scope.s = '00';
+    $scope.n = '00';
+    this.btn = "START";
     this.lap = 0;
-    this.allLaps = new Array();
+    this.allLaps = new Array(); //String array for all lap times
     this.midTime = new Date();
     this.startTime = new Date();
     $scope.enableBtn = false; 
@@ -21,17 +21,17 @@ angular.module('Timer', [])
         $scope.enableLap = false; 
 
         var startTime = new Date();
-
-        this.midTime = this.startTime;
+        this.midTime = new Date();
+ 
 
         this.timer = setInterval(function() {
             
             var diff = new Date(new Date - startTime);
 
-            ptr.h = ptr.timeToString(diff.getHours() - 1); //Compensation
-            ptr.m = ptr.timeToString(diff.getMinutes());
-            ptr.s = ptr.timeToString(diff.getSeconds());
-            ptr.n  = ptr.timeToString(Math.floor(diff.getMilliseconds()/10)); 
+            $scope.h = ptr.timeToString(diff.getHours() - 1); //Compensation for time difference
+            $scope.m = ptr.timeToString(diff.getMinutes());
+            $scope.s = ptr.timeToString(diff.getSeconds());
+            $scope.n  = ptr.timeToString(Math.floor(diff.getMilliseconds()/10)); 
 
             $scope.$apply();
 
@@ -47,14 +47,15 @@ angular.module('Timer', [])
     };
 
     this.reset = function reset() {
-        this.h = '00';
-        this.m = '00';
-        this.s = '00';
-        this.n = '00';
-        this.btn = "Start";
+        $scope.h = '00';
+        $scope.m = '00';
+        $scope.s = '00';
+        $scope.n = '00';
+        this.btn = "START";
         this.lap = 0; 
         this.allLaps = [];
         $scope.enableBtn = false; 
+        $scope.enableReset = true;
 
     };
 
@@ -64,7 +65,6 @@ angular.module('Timer', [])
 
         var diff = new Date(new Date - this.midTime);
                    
-
         var h = this.timeToString(diff.getHours() - 1); //Compensation
         var m = this.timeToString(diff.getMinutes());
         var s = this.timeToString(diff.getSeconds());
@@ -79,14 +79,14 @@ angular.module('Timer', [])
 
     this.change = function change() {
 
-        if(this.btn == "Start") {
+        if(this.btn == "START") {
             this.tick();
-            this.btn = "Stop"
+            this.btn = "STOP"
             $scope.btnReset=isDisabled = true;
         }
         else {
             this.stop();
-            this.btn = "Start"            
+            this.btn = "START"            
         }
     };
 
