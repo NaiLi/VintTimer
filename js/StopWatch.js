@@ -1,5 +1,5 @@
-angular.module('Timer', [])
-  .controller('timerController', function($scope) {
+angular.module('StopWatch', [])
+  .controller('stopwatchController', function($scope) {
     $scope.h = '00';
     $scope.m = '00';
     $scope.s = '00';
