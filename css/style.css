@@ -1,25 +1,11 @@
 
-#timer {
-	/*width: 600px;
-	height: 300px;
-	margin-right: auto;
-	margin-left: auto;
-	background-color: yellow;
-	font-size: 4em;*/
-}
-/*
-#padd {
-	background-color: black;
-	height: 20%;
-	margin-bottom: 150px;	
-	float: left;
-}*/
 
 /*#7abb33;*/
 
 body {
 	font-family: 'Arial'; 
-	font-style: white;
+	font-style: white;	
+	color: #303030;
 	/*background-color: black;*/
 }
 
@@ -28,20 +14,37 @@ button {
 	color: #ff5533;
 	height: 50px;
 	width: 150px;
+	margin: 5px 0px 5px 0px;
 	font-weight: bold;
 	font-size: 25px;
-	margin: 5px 0px 5px 0px;
 	text-align: middle;
+	cursor: pointer;
 	border-radius: 7px;
 	border-style: solid;
 	border-color: #ff5533;
 }
 
 button:disabled {
-	color: #a9a2a2;
+	color: #CFCACA;
 }
 
-#lap-times {
+button:hover {
+	border-width: 3px;
+
+}
+button:focus {
+	outline: none;
+}
+
+.content {
+	text-align: center;
+}
+
+.content h1 {
+	font-size: 30px;
+}
+
+.lap-times {
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
@@ -49,9 +52,15 @@ button:disabled {
 	color: #303030;
 }
 
+li:nth-child(1) {
+	font-size: 28px;
+	line-height: 1.8;
+}
+
 /* 	Bootstrap 	*/
+
 .jumbotron {
-  padding: 30px;
+  padding: 25px;
   margin-bottom: 30px;
   font-size: 21px;
   font-weight: 200;
@@ -85,5 +94,10 @@ button:disabled {
   }
   .jumbotron h1 {
     font-size: 63px;
+  }
+
+  .content h1 {
+  	font-size: 63px;
+  	line-height: 0.5;
   }
 }

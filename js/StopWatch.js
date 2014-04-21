@@ -70,7 +70,8 @@ angular.module('StopWatch', [])
         var s = this.timeToString(diff.getSeconds());
         var n  = this.timeToString(Math.floor(diff.getMilliseconds()/10)); 
 
-        this.allLaps.push("Lap " + this.lap + ": " + h + ":" + m + 
+        //this.allLaps.push("Lap " + this.lap + ": " + h + ":" + m +
+        this.allLaps.unshift("Lap " + this.lap + ": " + h + ":" + m + 
             ":" + s + ":" + n);
 
         this.midTime = new Date();
