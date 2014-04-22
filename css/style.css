@@ -1,12 +1,7 @@
-
-
-/*#7abb33;*/
-
 body {
 	font-family: 'Arial'; 
 	font-style: white;	
 	color: #303030;
-	/*background-color: black;*/
 }
 
 button {
@@ -57,7 +52,7 @@ li:nth-child(1) {
 	line-height: 1.8;
 }
 
-/* 	Bootstrap 	*/
+/* Some manipulated	Bootstrap 	*/
 
 .jumbotron {
   padding: 25px;
@@ -67,20 +62,12 @@ li:nth-child(1) {
   line-height: 2.1428571435;
   color: inherit;
   background-color: #ff5533;
-	text-align: center;  /*added*/
+	text-align: center;  
 }
 
 .jumbotron h1 {
   line-height: 1;
   color: white;
-}
-
-.jumbotron p {
-  line-height: 1.4;
-}
-
-.container .jumbotron {
-  border-radius: 6px;
 }
 
 @media screen and (min-width: 768px) {

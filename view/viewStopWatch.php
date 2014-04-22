@@ -5,7 +5,7 @@
 	</div>
 	  <div class="content">
 	  <h1>{{h}}:{{m}}:{{s}}:{{n}}</h1>
-			  <div class>
+			  <div>
 			  	<button class="btn" ng-disabled="enableBtn" ng-click="stopwatch.change()">{{stopwatch.btn}}</button>
 			  	<button class="btn" ng-disabled="enableLap" ng-click="stopwatch.lapTime()">LAP</button>
 			  </div>
