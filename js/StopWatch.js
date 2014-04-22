@@ -33,7 +33,7 @@ angular.module('StopWatch', [])
             
             var diff = new Date(new Date - startTime);
 
-            $scope.h = ptr.timeToString(Math.floor(diff.getTime() / 3600000));//ptr.timeToString(diff.getHours() - 1); 
+            $scope.h = ptr.timeToString(Math.floor(diff.getTime() / 3600000));
             $scope.m = ptr.timeToString(diff.getMinutes());
             $scope.s = ptr.timeToString(diff.getSeconds());
             $scope.n = ptr.timeToString(Math.floor(diff.getMilliseconds()/10)); 
@@ -73,7 +73,6 @@ angular.module('StopWatch', [])
         var s = this.timeToString(diff.getSeconds());
         var n = this.timeToString(Math.floor(diff.getMilliseconds()/10)); 
 
-        //this.allLaps.push("Lap " + this.lap + ": " + h + ":" + m +
         this.allLaps.unshift("Lap " + this.lap + ": " + h + ":" + m + //Places new lap time in the beginning of the array
             ":" + s + ":" + n);
 
